@@ -28,7 +28,8 @@ jobs:
             - name: Deploy to S3
               uses: jakejarvis/s3-sync-action@master
               with:
-                  source_dir: "dist"
+                  args: --delete
+                  source_dir: dist
 
             - name: Invalidate CloudFront Cache
               if: env.AWS_CLOUDFRONT_DISTRIBUTION_ID != ''
