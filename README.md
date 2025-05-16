@@ -14,7 +14,7 @@ After downloading, simply edit the HTML, CSS, and asset files included with `dis
 
 ### GitHub Actions
 
-You must have npm installed in order to use this build environment.
+Lots of stuff here:
 
 ## Bugs and Issues
 
