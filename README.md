@@ -3,18 +3,30 @@
 This project is based on [Resume](https://startbootstrap.com/theme/resume/), a resume and CV theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a fixed sidebar with content sections to build a simple, yet elegant resume.
 
 ## Download and Installation
-- [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-resume)
-- Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-resume.git`
+- [Fork this repository](https://github.com/757colorcoded/cloud-skills-resume/fork)
+- Clone your fork
 
 ## Usage
 
 ### Basic Usage
 
-After downloading, simply edit the HTML, CSS, and asset files included with `dist` directory. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+* After downloading, simply edit the HTML, CSS, and asset files included with `dist` directory.
+* To preview the changes you make to the code, you can open the `index.html` file in your web browser.
 
 ### GitHub Actions
+Change the value of the following variable in your [deploy.yaml](.github/workflows/deploy.yaml) file:
+```shell
+FIRST_NAME: Guillermo
+```
 
-Lots of stuff here:
+You'll need to create the following repository secrets to successfully deploy this site to AWS:
+```shell
+AWS_S3_BUCKET # the bucket to which you'll be deploying
+AWS_ACCESS_KEY_ID # your access key ID
+AWS_SECRET_ACCESS_KEY # your secret access key
+AWS_REGION # the region to which you'll be deploying
+AWS_CLOUDFRONT_DISTRIBUTION_ID # the distribution ID you'll be using
+```
 
 ## Bugs and Issues
 

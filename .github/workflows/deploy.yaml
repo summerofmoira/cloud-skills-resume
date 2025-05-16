@@ -9,6 +9,7 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         env:
+          FIRST_NAME: Guillermo
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -20,7 +21,7 @@ jobs:
 
             - name: Run test(s)
               run: |
-                  if ! grep -iq "Guillermo" dist/index.html; then
+                  if ! grep -iq "${{ env.FIRST_NAME }}" dist/index.html; then
                     echo "Your first name is not in the index.html file. Please add it and try again."
                     exit 1
                   fi
