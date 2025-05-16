@@ -28,7 +28,6 @@ jobs:
             - name: Deploy to S3
               uses: jakejarvis/s3-sync-action@master
               with:
-                  args: --acl public-read --delete
                   source_dir: "dist"
 
             - name: Invalidate CloudFront Cache
