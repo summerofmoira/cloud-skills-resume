@@ -26,14 +26,14 @@ jobs:
                   fi
 
             - name: Deploy to S3
-              uses: jakejarvis/s3-sync-action@master
+              uses: reggionick/s3-deploy@v3
               with:
-                  args: --delete
-                  source_dir: dist
+                  folder: dist
+                  bucket: ${{ env.AWS_S3_BUCKET }}
+                  bucket-region: ${{ env.AWS_REGION }}
+                  dist-id: ${{ env.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
+                  invalidation: /
+                  delete-removed: true
+                  no-cache: true
+                  private: true
 
-            - name: Invalidate CloudFront Cache
-              if: env.AWS_CLOUDFRONT_DISTRIBUTION_ID != ''
-              run: |
-                  aws cloudfront create-invalidation \
-                    --distribution-id $AWS_CLOUDFRONT_DISTRIBUTION_ID \
-                    --paths "/*"
