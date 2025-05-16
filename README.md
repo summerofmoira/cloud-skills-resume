@@ -13,7 +13,12 @@ This project is based on [Resume](https://startbootstrap.com/theme/resume/), a r
 * After downloading, simply edit the HTML, CSS, and asset files included with `dist` directory.
 * To preview the changes you make to the code, you can open the `index.html` file in your web browser.
 
-### GitHub Actions
+### Hosting
+This repository assumes you'll be using AWS to host this site. You can follow AWS' instructions to [Use an Amazon CloudFront distribution to serve a static website](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started-cloudfront-overview.html).
+
+### Deploying
+Once you're all set up, you can deploy this site using the provided GitHub Actions configuration file.
+
 Change the value of the following variable in your [deploy.yaml](.github/workflows/deploy.yaml) file:
 ```shell
 FIRST_NAME: Guillermo
